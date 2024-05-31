@@ -34,6 +34,18 @@ goToSecondMenuItem = firstMenu:AddItem("Second menu >>")
 		secondMenu:Open()
 	end)
 
+local smallImageItem = firstMenu:AddSmallImageItem("Small image item", joaat("HUD_TOASTS"), 1249997984)
+	:SetImgColor(joaat("COLOR_YELLOW"))
+	--:SetImgVisible(false)
+	:OnFocused(function()
+		firstMenu:SetFooter("The small image item is focused")
+	end)
+	:OnSelected(function()
+		firstMenu:SetFooter("The small image item is selected")
+	end)
+
+local image = firstMenu:AddImage(joaat("HUD_TOASTS"), 1249997984)
+
 -------------------------
 --   Second menu Items --
 -------------------------
@@ -47,6 +59,9 @@ for i=1, 3 do
 end
 
 setHeaderItem = secondMenu:AddImageItem("Toggle visibility", joaat("HUD_TOASTS"), 1249997984)
+	:SetImgColor(joaat("COLOR_RED"))
+	:SetSubtext("Oh its a coooooooooooooooooool subtext")
+	:SetSubtextColor(joaat("COLOR_BLUE"))
 	:OnFocused(function()
 		secondMenu:SetHeader("This is the new header")
 	end)
