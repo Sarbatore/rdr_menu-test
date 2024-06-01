@@ -4,10 +4,22 @@
 local firstMenu = Menu("First menu")
 	:SetSubheader("This is the subheader") -- The menu must be opened to see the subheader
 	:SetFooter("This menu is awesome!")
+	:OnOpened(function()
+		print("First menu opened")
+	end)
+	:OnClosed(function()
+		print("First menu closed")
+	end)
 
 local secondMenu = Menu("Second menu")
 	:SetFooter("This menu is awesome too!")
 	:SetFooterColor(joaat("COLOR_PURPLE"))
+	:OnOpened(function()
+		print("Second menu opened")
+	end)
+	:OnClosed(function()
+		print("Second menu closed")
+	end)
 
 ------------------------
 --   First menu Items --
@@ -18,6 +30,9 @@ item1 = firstMenu:AddItem("Item 1")
 	:SetTextColor(joaat("COLOR_BLUE"))
 	:OnFocused(function()
 		firstMenu:SetFooter("You can use")
+	end)
+	:OnUnfocused(function()
+		firstMenu:SetHeader("item 1 is unfocused")
 	end)
 
 item2 = firstMenu:AddItem("Item 2")
@@ -60,7 +75,7 @@ end
 
 setHeaderItem = secondMenu:AddImageItem("Toggle visibility", joaat("HUD_TOASTS"), 1249997984)
 	:SetImgColor(joaat("COLOR_RED"))
-	:SetSubtext("Oh its a coooooooooooooooooool subtext")
+	:SetSubtext("Oh its a subtext")
 	:SetSubtextColor(joaat("COLOR_BLUE"))
 	:OnFocused(function()
 		secondMenu:SetHeader("This is the new header")
