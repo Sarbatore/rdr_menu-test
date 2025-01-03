@@ -1,6 +1,5 @@
 ## Red Dead Redemption 2 native menu for RedM.
-
-Example menu of: https://forum.cfx.re/t/paid-all-frameworks-red-dead-native-menu-library-rdr-menu/5236441
+Example menu of: https://github.com/Sarbatore/rdr_ui
 
 Documentation: https://srb-documentation.gitbook.io/srbs-scripts/rdr_menu
 
