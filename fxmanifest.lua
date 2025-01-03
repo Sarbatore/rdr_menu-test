@@ -7,8 +7,8 @@ version "1.3"
 
 client_scripts {
   -- Import menu classes
-  "@rdr_menu/classes/Menu.lua",
-  "@rdr_menu/classes/Item.lua",
+  "@rdr_uis/menus/basic/Menu.lua",
+  "@rdr_uis/menus/basic/Item.lua",
   
   "example.lua",
 }
